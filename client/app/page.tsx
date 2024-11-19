@@ -56,10 +56,11 @@ export default function Home() {
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle>Cocktail Preferences</CardTitle>
-        <CardDescription>Tell us your preferences, and we'll recommend the perfect cocktail for you!</CardDescription>
+        <CardDescription>Tell us your preferences, and we&apos;ll recommend the perfect cocktail for you!</CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit}>
         <CardContent className="space-y-6">
+          {/* Spirits Dropdown - Select your preferred base alcohol */}
           <div className="space-y-2">
             <Label htmlFor="spirit">Preferred Spirit</Label>
             <Select value={selectedSpirit} onValueChange={setSelectedSpirit}>
@@ -78,6 +79,7 @@ export default function Home() {
               </SelectContent>
             </Select>
           </div>
+          {/* Flavors Dropdown - Choose your preferred taste profile */}
           <div className="space-y-2">
             <Label htmlFor="flavor">Preferred Flavor</Label>
             <Select value={selectedFlavor} onValueChange={setSelectedFlavor}>
@@ -96,6 +98,7 @@ export default function Home() {
               </SelectContent>
             </Select>
           </div>
+          {/* Dietary Restrictions Dropdown - Specify any dietary requirements */}
           <div className="space-y-2">
             <Label htmlFor="dietary">Dietary Restrictions</Label>
             <Select value={selectedDietaryRestrictions} onValueChange={setSelectedDietaryRestrictions}>
