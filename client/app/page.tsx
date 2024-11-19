@@ -4,29 +4,7 @@ import { useState } from "react"
 import { PreferenceDropdown } from "@/components/dropdown"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-
-const spirits = [
-  { value: "vodka", label: "Vodka" },
-  { value: "gin", label: "Gin" },
-  { value: "rum", label: "Rum" },
-  { value: "tequila", label: "Tequila" },
-  { value: "whiskey", label: "Whiskey" },
-]
-
-const flavors = [
-  { value: "sweet", label: "Sweet" },
-  { value: "sour", label: "Sour" },
-  { value: "bitter", label: "Bitter" },
-  { value: "fruity", label: "Fruity" },
-  { value: "spicy", label: "Spicy" },
-]
-
-const dietaryRestrictions = [
-  { value: "vegan", label: "Vegan" },
-  { value: "gluten-free", label: "Gluten-free" },
-  { value: "low-calorie", label: "Low-calorie" },
-  { value: "none", label: "None" },
-]
+import { spirits, flavors, dietaryRestrictions } from "@/constants/cocktailOptions"
 
 export default function Home() {
   const [selectedSpirit, setSelectedSpirit] = useState<string>("")
