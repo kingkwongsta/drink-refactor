@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import {
   Select,
@@ -20,15 +20,13 @@ interface Option {
 }
 
 interface PreferenceDropdownProps {
-  title: string
   description: string
   options: Option[]
   selectType: 'single' | 'multi'
   onSubmit: (selected: string | string[]) => void
 }
 
-export function PreferenceDropdown({ 
-  title, 
+export function PreferenceDropdown({
   description, 
   options,
   selectType,
@@ -44,13 +42,11 @@ export function PreferenceDropdown({
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit}>
         <CardContent>
           <div className="space-y-2">
-            <Label htmlFor="preference">Selection</Label>
+            <Label htmlFor="preference">{description}</Label>
             <Select value={selected} onValueChange={setSelected}>
               <SelectTrigger id="preference">
                 <SelectValue placeholder="Make your selection" />
@@ -77,5 +73,3 @@ export function PreferenceDropdown({
     </Card>
   )
 }
-
-
