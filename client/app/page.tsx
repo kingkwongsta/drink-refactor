@@ -2,7 +2,9 @@
 
 import { useState } from "react"
 import { PreferenceDropdown } from "@/components/dropdown"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
 const spirits = [
   { value: "vodka", label: "Vodka" },
   { value: "gin", label: "Gin" },
@@ -58,6 +60,11 @@ export default function Home() {
             />
           </div>
         </CardContent>
+        <CardFooter>
+          <Button type="submit" className="w-full">
+            Get Cocktail Recommendation
+          </Button>
+        </CardFooter>
       </Card>
       <button 
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
