@@ -23,13 +23,12 @@ const dietaryRestrictions = [
     { value: "vegan", label: "Vegan" },
     { value: "gluten-free", label: "Gluten-free" },
     { value: "low-calorie", label: "Low-calorie" },
-    { value: "none", label: "None" },
   ]
 
   interface PreferenceProps {
     setSelectedSpirit: (value: string) => void;
     setSelectedFlavor: (value: string) => void;
-    setSelectedDietaryRestrictions: (value: string) => void;
+    setSelectedDietaryRestrictions: (value: string[]) => void;
   }
 
   export default function Preference({ setSelectedSpirit, setSelectedFlavor, setSelectedDietaryRestrictions }: PreferenceProps) {
@@ -52,7 +51,7 @@ const dietaryRestrictions = [
             <Dropdown 
               description="Any dietary restrictions?" 
               options={dietaryRestrictions} 
-              selectType="single" 
+              selectType="multi" 
               stateSetter={setSelectedDietaryRestrictions}
             />
           </div>

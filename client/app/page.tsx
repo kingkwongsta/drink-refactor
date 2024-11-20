@@ -6,7 +6,7 @@ import Preference from "@/components/preference"
 export default function Home() {
   const [selectedSpirit, setSelectedSpirit] = useState<string>("")
   const [selectedFlavor, setSelectedFlavor] = useState<string>("")
-  const [selectedDietaryRestrictions, setSelectedDietaryRestrictions] = useState<string>("")
+  const [selectedDietaryRestrictions, setSelectedDietaryRestrictions] = useState<string[]>([])
 
   return (
     <div>
