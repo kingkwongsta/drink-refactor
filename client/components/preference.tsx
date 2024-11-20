@@ -1,7 +1,7 @@
 "use client"
-import { PreferenceDropdown } from "@/components/dropdown"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Dropdown } from "@/components/dropdown"
 
 const spirits = [
     { value: "vodka", label: "Vodka" },
@@ -26,24 +26,30 @@ const dietaryRestrictions = [
     { value: "none", label: "None" },
   ]
 
-export default function Preference(){
-  return (
+  interface PreferenceProps {
+    setSelectedSpirit: (value: string) => void;
+    setSelectedFlavor: (value: string) => void;
+    setSelectedDietaryRestrictions: (value: string) => void;
+  }
+
+  export default function Preference({ setSelectedSpirit, setSelectedFlavor, setSelectedDietaryRestrictions }: PreferenceProps) {
+    return (
     <Card className="w-full max-w-2xl mx-auto">
         <CardContent>
           <div className="space-y-4">
-            <PreferenceDropdown 
+            <Dropdown 
               description="What's your preferred spirit?" 
               options={spirits} 
               selectType="single" 
               stateSetter={setSelectedSpirit}
             />
-            <PreferenceDropdown 
+            <Dropdown 
               description="What flavors do you enjoy?" 
               options={flavors} 
               selectType="single" 
               stateSetter={setSelectedFlavor}
             />
-            <PreferenceDropdown 
+            <Dropdown 
               description="Any dietary restrictions?" 
               options={dietaryRestrictions} 
               selectType="single" 

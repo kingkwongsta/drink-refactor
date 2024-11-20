@@ -23,7 +23,7 @@ interface PreferenceDropdownProps {
   stateSetter: (value: string) => void
 }
 
-export function PreferenceDropdown({
+export function Dropdown({
   description, 
   options,
   selectType,
